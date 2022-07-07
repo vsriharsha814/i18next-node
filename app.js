@@ -18,11 +18,17 @@ i18next
   .use(Backend)
   .use(middleware.LanguageDetector)
   .init({
+   detection: {
+      caches: ['cookie', 'session']
+   },
    fallbackLng: 'en',
+   fallbackNS: ["common", 'trans', 'common'],
+   saveMissing: true,
    preload: ['en', 'tr'],
-   ns:["common", "translation"],
+   ns:["surya", "common"],
    backend: {
-     loadPath: './locales/{{lng}}/{{ns}}.json'
+     loadPath: './locales/{{lng}}/{{ns}}.json',
+     addPath: './locales/{{lng}}/{{ns}}.missing.json'
    }
   })
 
@@ -55,7 +61,7 @@ app.use('/users', usersRouter);
 
 // Example of a post request
 app.post('/postRequest', function(req, res) {
-  res.send(req.t("slokey", { ns: 'common', lng: 'en'}))
+  res.send(req.t("slokey", {lng: 'tr'}))
   })
 
 

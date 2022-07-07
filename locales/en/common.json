@@ -1,3 +1,6 @@
 {
-    "slokey": "hello from the new namespace"
+    "slokey": "hello from the new namespace",
+    "nokey": {
+        "nested": "no key present in turkish"
+    }
 }
