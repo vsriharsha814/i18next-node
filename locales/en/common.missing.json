@@ -1,0 +1,6 @@
+{
+  "missingkey": "missingkey",
+  "missingkey2": {
+    "nested": "missingkey2.nested"
+  }
+}

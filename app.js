@@ -19,13 +19,13 @@ i18next
   .use(middleware.LanguageDetector)
   .init({
    detection: {
-      caches: ['cookie', 'session']
+      caches: ['cookie','session']
    },
    fallbackLng: 'en',
    fallbackNS: ["common", 'trans', 'common'],
    saveMissing: true,
    preload: ['en', 'tr'],
-   ns:["surya", "common"],
+   ns:["common"],
    backend: {
      loadPath: './locales/{{lng}}/{{ns}}.json',
      addPath: './locales/{{lng}}/{{ns}}.missing.json'
@@ -61,7 +61,7 @@ app.use('/users', usersRouter);
 
 // Example of a post request
 app.post('/postRequest', function(req, res) {
-  res.send(req.t("slokey", {lng: 'tr'}))
+  res.send(req.t("common:missingkey2.nested"))
   })
 
 
